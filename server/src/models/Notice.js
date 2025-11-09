@@ -1,0 +1,2 @@
+import mongoose from 'mongoose'
+export default mongoose.model('Notice', new mongoose.Schema({title:{type:String,required:true},date:{type:Date,default:Date.now},body:String,attachmentUrl:String},{timestamps:true}))
