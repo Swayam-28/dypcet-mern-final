@@ -46,14 +46,14 @@ app.get('/', (req,res)=> res.json({ ok:true, service:'DYP API' }))
 
 app.use('/api/auth', auth)
 app.use('/api/departments', dep)
-app.use('/api/news', news)
+app.use('/api/news', news);
 app.use('/api/admissions', adm)
 app.use('/api/placements', plc)
 app.use('/api/notices', noti)
 app.use('/api/upload', upload)
 app.use('/api/enquiry', enquiry)
 app.use("/api/galleryitems", galleryRoutes);
-app.use('/api/faculty', facultyRoutes);
+app.use('/api/faculty', fac);
 
 
 const port = process.env.PORT || 5000
