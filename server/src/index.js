@@ -15,7 +15,7 @@ import noti from './routes/noticeRoutes.js'
 import upload from './routes/uploadRoutes.js'
 import enquiry from './routes/enquiryRoutes.js'
 import galleryRoutes from "./routes/galleryRoutes.js";
-import facultyRoutes from "./routes/facultyRoutes.js";
+import fac from './routes/facultyRoutes.js'
 
 dotenv.config()
 
