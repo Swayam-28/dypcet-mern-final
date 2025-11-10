@@ -11,11 +11,11 @@ import dep from './routes/departmentRoutes.js'
 import news from './routes/newsRoutes.js'
 import adm from './routes/admissionRoutes.js'
 import plc from './routes/placementRoutes.js'
-import fac from './routes/facultyRoutes.js'
 import noti from './routes/noticeRoutes.js'
 import upload from './routes/uploadRoutes.js'
 import enquiry from './routes/enquiryRoutes.js'
 import galleryRoutes from "./routes/galleryRoutes.js";
+import facultyRoutes from "./routes/facultyRoutes.js";
 
 dotenv.config()
 
@@ -49,11 +49,12 @@ app.use('/api/departments', dep)
 app.use('/api/news', news)
 app.use('/api/admissions', adm)
 app.use('/api/placements', plc)
-app.use('/api/faculties', fac)
 app.use('/api/notices', noti)
 app.use('/api/upload', upload)
 app.use('/api/enquiry', enquiry)
 app.use("/api/galleryitems", galleryRoutes);
+app.use('/api/faculty', facultyRoutes);
+
 
 const port = process.env.PORT || 5000
 const uri = process.env.MONGO_URI
