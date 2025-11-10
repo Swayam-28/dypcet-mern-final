@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { apiAuth, uploadFile } from '../services/api'
+import { api, uploadFile } from '../services/api'
 import { clearToken } from '../services/auth'
 import { useNavigate } from 'react-router-dom'
 
@@ -18,14 +18,14 @@ export default function AdminDashboard(){
 
   const load = async()=>{
     const [d,n,a,p,f,ns,g] = await Promise.all([
-      apiAuth.get('/departments'), apiAuth.get('/news'), apiAuth.get('/admissions'),
-      apiAuth.get('/placements'), apiAuth.get('/faculty'), apiAuth.get('/notices'), apiAuth.get('/gallery')
+      api.get('/departments'), api.get('/news'), api.get('/admissions'),
+      api.get('/placements'), api.get('/faculty'), api.get('/notices'), api.get('/gallery')
     ])
     setDeps(d.data); setNewsL(n.data); setAds(a.data); setPls(p.data); setFas(f.data); setNos(ns.data); setGas(g.data)
   }
   useEffect(()=>{ load() },[])
-  const add = (url, data, reset) => apiAuth.post(url, data).then(()=>{ reset&&reset(); load() })
-  const del = (url, id) => apiAuth.delete(`${url}/${id}`).then(load)
+  const add = (url, data, reset) => api.post(url, data).then(()=>{ reset&&reset(); load() })
+  const del = (url, id) => api.delete(`${url}/${id}`).then(load)
 
   return (<div className='container section'>
     <h1>Admin Dashboard</h1>
